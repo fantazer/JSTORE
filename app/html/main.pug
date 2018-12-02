@@ -1,6 +1,7 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
+
 .banner(style="background-image:url('img/banner-bg.png')")
 	.header
 		.main-cont
@@ -18,28 +19,28 @@ include block_html/_include.pug
 	.banner-content-wrap
 		.main-cont
 			.banner-content
-				.banner-slogan
+				.banner-slogan(data-aos="fade-in" data-aos-delay="250" data-aos-duration="1000")
 					.banner-slogan__title Запустите свой сайт доставки
 					.banner-slogan__text Шаблон доставки блюд, интегрированный с iikoчерез iikoDelivery widget
 					.banner-slogan__get Оставить заявку
-				.banner-slogan__img
+				.banner-slogan__img(data-aos="zoom-in" data-aos-delay="750" data-aos-duration="800")
 					img(src="img/main-banner-img.png", alt="")
 
 //advant
 .section.section-advant
 	.main-cont
 		.advant
-			.advant-el
+			.advant-el(data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="800" )
 				.advant-el__icon
 					img(src="img/launch.svg", alt="")
 				.advant-el__title Быстрый старт
 				.advant-el__text Запуск в течении 7 дней, после подписания договора. Сайт полностью готов и настроен, можно продавать с первого дня
-			.advant-el
+			.advant-el(data-aos="zoom-in" data-aos-delay="1250" data-aos-duration="800" )
 				.advant-el__icon
 					img(src="img/money.svg", alt="")
 				.advant-el__title Малый бюджет
 				.advant-el__text Запуск в течении 7 дней, после подписания договора. Сайт полностью готов и настроен, можно продавать с первого дня
-			.advant-el
+			.advant-el(data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800" )
 				.advant-el__icon
 					img(src="img/cook.svg", alt="")
 				.advant-el__title Быстрый старт
@@ -49,9 +50,9 @@ include block_html/_include.pug
 .section.section--gray.section-variable
 	.main-cont
 		.variable
-			.variable-img
+			.variable-img(data-aos="fade-right" data-aos-delay="500" data-aos-duration="1200")
 				img(src="img/cards.png", alt="")
-			.variable-content
+			.variable-content(data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1200")
 				.variable-title Вариации карточки товара
 				.variable-text Её характеристики могут изменяться в зависимости от продаваемого блюда: меняется информация и размер, высвечиваются теги. При необходимости можно добавить модификаторы
 				.variable-get-row
@@ -61,9 +62,23 @@ include block_html/_include.pug
 //convers
 .section.section-convers
 	.main-cont
-		.convers-title Увеличение конверсии с помощью допродаж
-		.convers-text На нашем сайте предусмотрена возможность допродаж прямо из карточки товара. Возможность выбора дополнительных ингредиентов позволяют значительно увеличить конверсию
-		.convers-img
+		#parallaxScene.scene.scene--bg(data-aos="fade-in" data-aos-delay="1500" data-aos-duration="1200")
+			.bg-icon.bg-icon-conv--fish(data-depth="0.2" )
+				img(src="img/fish.svg", alt="")
+			.bg-icon.bg-icon-conv--spageti(data-depth="0.3")
+				img(src="img/spageti.svg", alt="")
+			.bg-icon.bg-icon-conv--aplle(data-depth="0.4")
+				img(src="img/aplle.svg", alt="")
+			.bg-icon.bg-icon-conv--pizza(data-depth="0.3" data-invert-x="1" data-invert-Y="1")
+				img(src="img/pizza.svg", alt="")
+			.bg-icon.bg-icon-conv--donnat(data-depth="0.1")
+				img(src="img/donnat.svg", alt="")
+			.bg-icon.bg-icon-conv--cake(data-depth="0.25")
+				img(src="img/cake.svg", alt="")
+
+		.convers-title(data-aos="fade-down" data-aos-delay="500" data-aos-duration="1200") Увеличение конверсии с помощью допродаж
+		.convers-text(data-aos="fade-up" data-aos-delay="500" data-aos-duration="1200") На нашем сайте предусмотрена возможность допродаж прямо из карточки товара. Возможность выбора дополнительных ингредиентов позволяют значительно увеличить конверсию
+		.convers-img(data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1200")
 			img(src="img/laptop.png", alt="")
 
 //custom
@@ -71,30 +86,44 @@ include block_html/_include.pug
 	.section-custom-wave(style="background-image:url('img/pattern.png')")
 	.main-cont
 		.custom-wrap
-			.custom-title Кастомизация
-			.custom-text Пределу совершенства нет — шаблон поддерживает изменения дизайна. В качестве дополнительной услуги мы можем адаптировать сайт в соответствии с корпоративным стилем компании
-			.custom-get Оставить заявку
-			.custom-img
+			.custom-title(data-aos="fade-down" data-aos-delay="500" data-aos-duration="1200") Кастомизация
+			.custom-text(data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200") Пределу совершенства нет — шаблон поддерживает изменения дизайна. В качестве дополнительной услуги мы можем адаптировать сайт в соответствии с корпоративным стилем компании
+			.custom-get(data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800") Оставить заявку
+			.custom-img(data-aos="fade-up" data-aos-delay="1800" data-aos-duration="1200")
 				img(src="img/custom.png", alt="")
 
 //makeout
 .section.section--gray.section-makeout
+
 	.main-cont
-		.makeout-title Удобное оформление заказа
-		.makeout-text Заказы с сайта сразу попадают сразу в iiko. Клиент может выбрать наиболее удобный способ оплаты: онлайн (<a href="#" class="link-mark">о подключенных банках можете узнать тут</a>), наличный, безналичный (картой курьеру) и промо коды при наличии системы лояльности iikoCard5.
-		.makeout-img
+		#parallaxScene2.scene--bg(data-aos="fade-in" data-aos-delay="1200" data-aos-duration="1200")
+			.bg-icon.bg-icon-conv--fish(data-depth="0.2" )
+				img(src="img/fish.svg", alt="")
+			.bg-icon.bg-icon-conv--spageti(data-depth="0.3")
+				img(src="img/star.svg", alt="")
+			.bg-icon.bg-icon-conv--aplle(data-depth="0.4")
+				img(src="img/purse.svg", alt="")
+			.bg-icon.bg-icon-conv--pizza(data-depth="0.3" data-invert-x="1" data-invert-Y="1")
+				img(src="img/coins.svg", alt="")
+			.bg-icon.bg-icon-conv--donnat(data-depth="0.1")
+				img(src="img/doc.svg", alt="")
+			.bg-icon.bg-icon-conv--cake(data-depth="0.25")
+				img(src="img/cards.svg", alt="")
+		.makeout-title(data-aos="fade-down" data-aos-delay="250" data-aos-duration="1200") Удобное оформление заказа
+		.makeout-text(data-aos="fade-up" data-aos-delay="500" data-aos-duration="1200") Заказы с сайта сразу попадают сразу в iiko. Клиент может выбрать наиболее удобный способ оплаты: онлайн (<a href="#" class="link-mark">о подключенных банках можете узнать тут</a>), наличный, безналичный (картой курьеру) и промо коды при наличии системы лояльности iikoCard5.
+		.makeout-img(data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1200")
 			img(src="img/order.png", alt="")
 
 //work
 .section.section-work
 	.main-cont
 		.work
-			.work-content
+			.work-content(data-aos="fade-right" data-aos-delay="500" data-aos-duration="1500")
 				.work-title Всё готово к работе
 				.work-text
 					p Сайт содержит сразу полный набор страниц необходимый для доставки. Вам лишь остается заполнить их своей информацией.
 					p Страницы- контакты, о нас, акции, условия доставки и оплаты, вакансии, отзывы, контентная страница (для статических статей, например договор публичной оферты или конфиденциальности)
-			.work-img
+			.work-img(data-aos="fade-left" data-aos-delay="750" data-aos-duration="1200")
 				img(src="img/slider.png", alt="")
 				.work-slider-wrap
 					.work-slider
@@ -106,9 +135,9 @@ include block_html/_include.pug
 	.section-adaptive-wave(style="background-image:url('img/pattern.png')")
 	.main-cont
 		.adaptive
-			.adaptive-img
+			.adaptive-img(data-aos="fade-down" data-aos-delay="500" data-aos-duration="1200")
 				img(src="img/adaptive.png", alt="")
-			.adaptive-content
+			.adaptive-content(data-aos="fade-up" data-aos-delay="7500" data-aos-duration="1200")
 				.adaptive-title Адаптивный дизайн
 				.adaptive-text Сайт адаптирован под мобильные устройства и широкоэкранные форматы
 
@@ -116,7 +145,7 @@ include block_html/_include.pug
 .section.section--gray.section-order
 	.main-cont
 		.order-wrap
-			.order
+			.order(data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1200")
 				.order-title Оставьте заявку
 				.order-text Мы свяжемся с вами в ближайшее <br> время и уточним все детали
 				form(action="#")

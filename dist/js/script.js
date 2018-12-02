@@ -1,11 +1,38 @@
 $(document).ready(function () {
 
+	//animate show
+	AOS.init({
+		 offset: 150
+	});
+	//animate show===end
+
+	//paralax scene
+
+        var scene = document.getElementById('parallaxScene');
+        var parallaxInstance = new Parallax(scene, {
+            relativeInput: true,
+            scalarX: 5
+        });
+
+        var scene2 = document.getElementById('parallaxScene2');
+        var parallaxInstance2 = new Parallax(scene2, {
+            relativeInput: true,
+            invertX: false,
+            invertY: false,
+            scalarX: 5
+        });
+
+	//paralax scene ===end
+
+
+	//slider
 	$('.work-slider').slick({
 		slidesToShow: 1,
 		autoplay: false,
 		speed: 500,
 		dots:true
 	});
+	//slider === end
 
 
 	//modal
