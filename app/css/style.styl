@@ -10,6 +10,8 @@
 @import "../module/**/*"
 
 body
+	+below(1440px)
+		overflow-x: hidden!important
 	@extend .type--main
 	font-family $v-font
 	color $main-text-color
@@ -47,7 +49,8 @@ body
 	position: absolute
 	top: 0
 	left: 0
-	background: #18191d
+	background-image linear-gradient(-60deg, #8c53ff 0%, #70a4ff 100%)
+	opacity 0.9
 	width: 100%
 	height: 100vh
 	min-height 100vh
@@ -56,25 +59,26 @@ body
 	+below(768px)
 		width: 100%
 		box-shadow 0 0 0
-	box-shadow 0 2px 4px rgba(0, 0, 0, 0.24)
+	box-shadow: 0 24px 32px rgba(0, 0, 0, 0.16);
 	transform translateY(-350%)
 	position: absolute
 	opacity .1
 	transition transform .8s, opacity 1s
-	max-width 470px
-
+	max-width 570px
+	br(4px)
+	background: #f8f8fe
 .modal-content
 	+below(768px)
 		padding: 20px
 	+below(640px)
 		height: 100%
-		overflow-y scroll
 		padding: 20px 10px
 		width: 100%!important
 	//background: #2b8850
-	background: white
+	background: #f8f8fe
 	position: relative
-	padding: 40px
+	padding: 70px 50px
+	br(4px)
 	+below(768px)
 		width: 80%
 
@@ -103,7 +107,7 @@ body
 		+below(768px)
 			size 15px
 		size 20px
-		fill white
+		fill black
 
 .modal-open
 	overflow: hidden
@@ -123,23 +127,25 @@ body
 
 .modal-title
 	+below(768px)
-		font-size: 20px
+		font-size: 28px
 	@extend .type--md
 	letter-spacing 1.2px
 	text-align: center
-	up()
-	margin-bottom: 30px
+	color #32137a
+	font-size 40px
+	font-weight:700
+	margin-bottom: 20px
 
 .modal-text
 	+below(768px)
-		width: 100%
 		font-size: 12px
+		margin-bottom: 20px
 	text-align: center
 	margin: 20px auto 40px auto
 	font-size: 16px
-	line-height: 1.2
-	color #5f5f5f
-
+	line-height: 1.6
+	color $main-text-color
+	width: 70%
 .modal-agree
 	margin-top: 30px
 	margin-bottom: 40px
@@ -154,10 +160,14 @@ body
 	left 0
 //.main-cont
 .header-wrap
+	+below(1024px)
+		padding-top: 15px
 	flex(between)
 	padding-top: 35px
 //.header-logo
 .header-menu
+	+below(1024px)
+		display: none
 	width: 65%
 	flex(between)
 .header-menu__el
@@ -167,13 +177,24 @@ body
 	&:hover
 		color $pure
 .banner-content-wrap
+	+below(1024px)
+		padding-top: 50px
 	padding-top: 115px
 .banner-content
+	+below(640px)
+		fw()
 	f()
 	justify-content: space-between
 .banner-slogan
+	+below(1024px)
+		width: 45%
+	+below(640px)
+		width: 100%
+		margin-bottom: 30px
 	width: 35%
 .banner-slogan__title
+	+below(1024px)
+		font-size: 36px
 	color #ffffff
 	font-family 'Museo Cyrl'
 	font-size 50px
@@ -184,26 +205,41 @@ body
 	line-height: 2
 	margin-bottom: 40px
 .banner-slogan__get
+	+below(640px)
+		width: 100%
 	@extend .btn--md
 	@extend .btn--green
 	padding: 18px 30px
 .banner-slogan__img
+	+below(640px)
+		width: 100%
 	width: 60%
 
 .section
+	+below(768px)
+		padding: 40px 0
 	padding: 90px 0
 
 .advant
+	+below(640px)
+		fw()
 	flex(between)
 .advant-el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 30%
 	flex(mid)
 	fl()
 .advant-el__icon
+	+below(640px)
+		margin-bottom: 20px
 	margin-bottom: 40px
 	img
 		size 57px
 .advant-el__title
+	+below(640px)
+		font-size: 20px
 	margin-bottom: 25px
 	font-family Museo Cyrl
 	font-size 24px
@@ -215,30 +251,61 @@ body
 
 .section--gray
 	background: #f8f8fe
-//.section-variable
+.section-work
+	overflow: hidden
 .variable
+	+below(768px)
+		flex(mid)
+		fl()
+		max-width 480px
+		margin-left: auto
+		margin-right: auto
 	f()
 	justify-content: space-between
 .variable-img
+	+below(768px)
+		width: 100%
 	width: 50%
 .variable-content
+	+below(768px)
+		width: 100%
 	width: 40%
 	margin-top: 5%
 .variable-title
+	+below(768px)
+		font-size: 28px
+		margin-bottom: 20px
+		text-align: center
+	+below(640px)
+		text-align: left
 	font-family Museo Cyrl
 	font-size 40px
 	font-weight 700
 	color #32137a
 	margin-bottom: 40px
 .variable-text
+	+below(768px)
+		margin-bottom: 30px
+		text-align: center
+	+below(640px)
+		text-align: left
 	line-height: 2
 	margin-bottom: 65px
 .variable-get-row
+	+below(768px)
+		flex(mid)
+	+below(640px)
+		fl()
 	f()
 .variable-get-el
+	+below(640px)
+		width: 100%
 	width: 180px
 	padding: 18px
 .variable-get-dark
+	+below(640px)
+		margin-right: 0
+		margin-bottom: 20px
 	@extend .btn--md
 	@extend .btn--mark
 	margin-right: 20px
@@ -248,6 +315,15 @@ body
 
 
 .convers-title
+	+below(768px)
+		font-size: 28px
+		width: 80%
+		text-align: center
+		margin-left: auto
+		margin-right: auto
+	+below(640px)
+		width: 100%
+		text-align: left
 	font-family Museo Cyrl
 	font-size 40px
 	font-weight 700
@@ -256,6 +332,13 @@ body
 	text-align: center
 
 .convers-text
+	+below(768px)
+		margin-bottom: 30px
+	+below(640px)
+		text-align: left
+		margin-left: 0
+		margin-right: 0
+		width: 100%
 	text-align: center
 	center(770px,0)
 	line-height: 1.6
@@ -279,6 +362,12 @@ body
 	opacity: .3
 
 .custom-title
+	+below(768px)
+		margin-bottom: 20px
+		font-size: 32px
+	+below(640px)
+		text-align: left
+		width: 100%
 	color white
 	font-family Museo Cyrl
 	font-size 40px
@@ -286,6 +375,11 @@ body
 	margin-bottom: 30px
 	text-align: center
 .custom-text
+	+below(768px)
+		font-size: 14px
+		margin-bottom: 30px
+	+below(640px)
+		text-align: left
 	center(660px,0)
 	text-align: center
 	color white
@@ -300,11 +394,19 @@ body
 	padding-bottom: 0
 
 .custom-get
+	+below(768px)
+		margin-bottom: 50px
+	+below(640px)
+		width: 100%
 	@extend .btn--md
 	@extend .btn--green
 	margin-bottom: 100px
 
 .makeout-title
+	+below(768px)
+		font-size: 32px
+	+below(640px)
+		text-align: left
 	font-family Museo Cyrl
 	font-size 40px
 	font-weight 700
@@ -313,6 +415,10 @@ body
 	text-align: center
 
 .makeout-text
+	+below(768px)
+		margin-bottom: 30px
+	+below(640px)
+		text-align: left
 	text-align: center
 	center(770px,0)
 	line-height: 1.6
@@ -323,12 +429,23 @@ body
 		margin: 0 auto
 
 .work
+	+below(768px)
+		flex(mid)
+		fl()
+		max-width 640px
+		margin-left: auto
+		margin-right: auto
 	f()
 	justify-content: space-between
 	align-items: center
 .work-content
+	+below(768px)
+		width: 100%
 	width: 45%
 .work-title
+	+below(768px)
+		font-size: 32px
+		margin-bottom: 20px
 	color #32137a
 	font-family Museo Cyrl
 	font-size 40px
@@ -339,6 +456,8 @@ body
 		line-height: 1.6
 
 .work-img
+	+below(768px)
+		width: 100%
 	width: 670px
 	position: relative
 
@@ -358,9 +477,15 @@ body
 		font-size: 12px
 
 .adaptive
+	+below(640px)
+		fl()
+		flex(mid)
 	flex(between)
 
 .section-adaptive
+	+below(640px)
+		background-size: 100% 100%
+		padding: 30px 0
 	position: relative
 	background-image linear-gradient(-65deg, #8c53ff 0%, #70a4ff 100%)
 	padding: 0
@@ -377,20 +502,40 @@ body
 	background-position: top center
 	opacity: .3
 
+.adaptive-img
+	img
+		+below(640px)
+			max-width 200px
+			margin-bottom: 20px
 
 .adaptive-title
+	+below(768px)
+		font-size: 28px
+		text-align: center
+		margin-bottom: 20px
+	+below(640px)
+		text-align: left
 	color white
 	font-family Museo Cyrl
 	font-size 40px
 	font-weight 700
 	margin-bottom: 30px
 .adaptive-text
+	+below(768px)
+		text-align: center
+		width: 100%
+		margin-left: auto
+		margin-right: auto
+	+below(640px)
+		text-align: left
 	color white
 	opacity: .7
 	max-width 380px
 	line-height: 2
 
 .adaptive-content
+	+below(640px)
+		width: 100%
 	width: 48%
 
 .order
@@ -398,6 +543,8 @@ body
 	margin-right: auto
 	max-width 460px
 .order-title
+	+below(768px)
+		font-size: 32px
 	color #32137a
 	font-family Museo Cyrl
 	font-size 40px
@@ -405,6 +552,8 @@ body
 	margin-bottom: 20px
 	text-align: center
 .order-text
+	+below(768px)
+		margin-bottom: 20px
 	line-height: 2
 	text-align: center
 	margin-bottom: 45px
@@ -413,9 +562,15 @@ body
 	.input
 		width: 100%
 .order-footer
+	+below(640px)
+		fw()
+		margin-top: 30px
 	flex(between)
 	margin-top: 50px
 .order-footer__text
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	font-size: 12px
 	width: 60%
 	line-height: 1.6
@@ -424,36 +579,30 @@ body
 
 .link-mark
 	color $pure
-	display: inline-block
+	display: inline
 	margin: 0 3px
 	position: relative
 	tr(all)
 	opacity:.7
-	&:hover
-		opacity:1
-		color $pure
-		&:before
-			content ''
-			opacity:0
-	&:before
-		content ''
-		tr(all)
-		position: absolute
-		bottom 0px
-		left 0
-		height: 1px
-		width: 100%
-		background: $pure
-		opacity: .2
+	text-decoration: underline
 
 .order-footer__get
+	+below(640px)
+		width: 100%
 	@extend .btn--md
 	@extend .btn--mark
 
 .footer
+	+below(640px)
+		flex(mid)
+		fl()
+		padding: 30px 0
 	flex(between)
 
 .footer-col
+	+below(640px)
+		width: 100%
+		padding: 10px	0
 	padding: 50px 0
 	width: 33%
 
@@ -463,6 +612,8 @@ body
 	border-right 1px solid #f1f1f8
 
 .footer-politic
+	+below(640px)
+		text-align: center
 	text-align: right
 
 .footer-link
@@ -471,13 +622,23 @@ body
 	font-size: 14px
 
 .section-order
+	+below(768px)
+		padding: 50px 0
+		margin-top: 0
 	padding: 140px 0
 	margin-top: -30px
 
 .section-convers
+	+below(768px)
+		max-width 640px
+		margin-left: auto
+		margin-right: auto
 	.main-cont
 		position: relative
 
+.footer-logo
+	+below(640px)
+		flex(mid)
 .bg-icon
 	position: absolute
 
@@ -504,6 +665,102 @@ body
 	top 80%!important
 	left 95%!important
 .scene--bg
+	+below(1024px)
+		display: none
 	position: absolute
 	width: 100%
 	height: 100%
+
+.agree-row
+	+below(640px)
+		fw()
+	flex(between)
+	margin-top: 40px
+.agree-row__text
+	+below(640px)
+		width: 100%
+		order 2
+		margin-right: 0
+		margin-top: 20px
+		text-align: center
+	margin-right: 30px
+	font-size: 12px
+	opacity .7
+	color #32137a
+	a
+		color $pure
+		display: inline-block
+		margin-left: 3px
+		line-height: 1.6
+.modal-send
+	+below(640px)
+		width: 100%
+	@extend .btn--md
+	@extend .btn--mark
+
+.head-toggle
+	size 50px
+	flex(mid)
+	cp()
+	+above(1025px)
+		display: none
+	.icon
+		size 25px
+		fill white
+	.icon-close
+		display: none
+
+.head-toggle--open
+	.icon-close
+		display: block
+	.icon-open
+		display: none
+
+.slide-menu
+	+above(1025px)
+		display: none !important
+	+below(480px)
+		width: 100%
+	background: $pure
+	color white
+	position: fixed
+	height: 100% //Отступ хедер
+	z-index 1250
+	top 0
+	right 0
+	width: 320px
+	transform translateX(100%)
+	tr(all)
+.slide-menu--open
+	transform translateX(0%)
+	overflow-y: auto
+.slide-menu__list
+	position: relative
+	.icon-close
+		position: absolute
+		size 20px
+		fill white
+		right: 20px
+		top 20px
+		cp()
+		z-index 3
+.slide-menu__list-el
+	padding: 20px
+	display: block
+	color white
+	font-size: 16px
+	tr(all)
+	border-bottom 1px solid #ffffff1c
+	&:hover
+		color white
+.body-fix
+	position: fixed!important
+	overflow-Y: scroll!important
+	width:100%!important
+
+.section-makeout
+	+below(768px)
+		.main-cont
+			max-width 640px
+			margin-left: auto
+			margin-right: auto

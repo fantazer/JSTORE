@@ -19,11 +19,23 @@
 	</head>
 
 	<body>
+		<div class="slide-menu">
+			<div class="slide-menu__list">
+				<svg class="icon icon-close">
+					<use xlink:href="#close"></use>
+				</svg><a class="slide-menu__list-el" href="#cards" rel="m_PageScroll2id">Карточка</a><a class="slide-menu__list-el" href="#sale" rel="m_PageScroll2id">Допродажи</a><a class="slide-menu__list-el" href="#order" rel="m_PageScroll2id">Оформление заказа</a><a class="slide-menu__list-el" href="#castom" rel="m_PageScroll2id">Кастомизация</a><a class="slide-menu__list-el" href="#page" rel="m_PageScroll2id">Страницы</a><a class="slide-menu__list-el" href="#adaptive" rel="m_PageScroll2id">Адаптив</a>
+			</div>
+		</div>
 		<div class="banner" style="background-image:url('img/banner-bg.png')">
 			<div class="header">
 				<div class="main-cont">
 					<div class="header-wrap"><a class="header-logo" href="/"><img src="img/logo-light.svg" alt="" /></a>
-						<div class="header-menu"><a class="header-menu__el" href="#">Карточка</a><a class="header-menu__el" href="#">Допродажи</a><a class="header-menu__el" href="#">Оформление заказа</a><a class="header-menu__el" href="#">Кастомизация</a><a class="header-menu__el" href="#">Страницы</a><a class="header-menu__el" href="#">Адаптив</a></div>
+						<div class="header-menu"><a class="header-menu__el" href="#cards" rel="m_PageScroll2id">Карточка</a><a class="header-menu__el" href="#sale" rel="m_PageScroll2id">Допродажи</a><a class="header-menu__el" href="#order" rel="m_PageScroll2id">Оформление заказа</a><a class="header-menu__el" href="#castom" rel="m_PageScroll2id">Кастомизация</a><a class="header-menu__el" href="#page" rel="m_PageScroll2id">Страницы</a><a class="header-menu__el" href="#adaptive" rel="m_PageScroll2id">Адаптив</a></div>
+						<div class="head-toggle">
+							<svg class="icon icon-open">
+								<use xlink:href="#menu"></use>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -33,7 +45,7 @@
 						<div class="banner-slogan" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1000">
 							<div class="banner-slogan__title">Запустите свой сайт доставки</div>
 							<div class="banner-slogan__text">Шаблон доставки блюд, интегрированный с iikoчерез iikoDelivery widget</div>
-							<div class="banner-slogan__get">Оставить заявку</div>
+							<div class="modal-get banner-slogan__get" data-modal="order">Оставить заявку</div>
 						</div>
 						<div class="banner-slogan__img" data-aos="zoom-in" data-aos-delay="750" data-aos-duration="800"><img src="img/main-banner-img.png" alt="" /></div>
 					</div>
@@ -63,20 +75,22 @@
 			</div>
 		</div>
 		<!--variable-->
-		<div class="section section--gray section-variable">
+		<div class="section section--gray section-variable" id="cards">
 			<div class="main-cont">
 				<div class="variable">
 					<div class="variable-img" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1200"><img src="img/cards.png" alt="" /></div>
 					<div class="variable-content" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1200">
 						<div class="variable-title">Вариации карточки товара</div>
 						<div class="variable-text">Её характеристики могут изменяться в зависимости от продаваемого блюда: меняется информация и размер, высвечиваются теги. При необходимости можно добавить модификаторы</div>
-						<div class="variable-get-row"><a class="variable-get-el variable-get-dark" href="#">Оставить заявку</a><a class="variable-get-el variable-get-light" href="#">Подробнее</a></div>
+						<div class="variable-get-row">
+							<div class="modal-get variable-get-el variable-get-dark" data-modal="order">Оставить заявку</div><a class="variable-get-el variable-get-light" href="#">Подробнее</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!--convers-->
-		<div class="section section-convers">
+		<div class="section section-convers" id="sale">
 			<div class="main-cont">
 				<div class="scene scene--bg" id="parallaxScene" data-aos="fade-in" data-aos-delay="1500" data-aos-duration="1200">
 					<div class="bg-icon bg-icon-conv--fish" data-depth="0.2"><img src="img/fish.svg" alt="" /></div>
@@ -92,13 +106,13 @@
 			</div>
 		</div>
 		<!--custom-->
-		<div class="section section-custom">
+		<div class="section section-custom" id="castom">
 			<div class="section-custom-wave" style="background-image:url('img/pattern.png')"></div>
 			<div class="main-cont">
 				<div class="custom-wrap">
 					<div class="custom-title" data-aos="fade-down" data-aos-delay="500" data-aos-duration="1200">Кастомизация</div>
 					<div class="custom-text" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200">Пределу совершенства нет — шаблон поддерживает изменения дизайна. В качестве дополнительной услуги мы можем адаптировать сайт в соответствии с корпоративным стилем компании</div>
-					<div class="custom-get" data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800">Оставить заявку</div>
+					<div class="modal-get custom-get" data-modal="order" data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800">Оставить заявку</div>
 					<div class="custom-img" data-aos="fade-up" data-aos-delay="1800" data-aos-duration="1200"><img src="img/custom.png" alt="" /></div>
 				</div>
 			</div>
@@ -120,7 +134,7 @@
 			</div>
 		</div>
 		<!--work-->
-		<div class="section section-work">
+		<div class="section section-work" id="page">
 			<div class="main-cont">
 				<div class="work">
 					<div class="work-content" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1500">
@@ -144,7 +158,7 @@
 			</div>
 		</div>
 		<!--adaptive-->
-		<div class="section section-adaptive">
+		<div class="section section-adaptive" id="adaptive">
 			<div class="section-adaptive-wave" style="background-image:url('img/pattern.png')"></div>
 			<div class="main-cont">
 				<div class="adaptive">
@@ -157,7 +171,7 @@
 			</div>
 		</div>
 		<!--order-->
-		<div class="section section--gray section-order">
+		<div class="section section--gray section-order" id="order">
 			<div class="main-cont">
 				<div class="order-wrap">
 					<div class="order" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1200">
@@ -184,6 +198,43 @@
 				<div class="footer"><a class="footer-col footer-logo" href="#"><img src="img/logo-footer.svg" alt="" /></a>
 					<div class="footer-col footer-info"><a class="footer-link" href="#">Информация по настройке шаблона</a></div>
 					<div class="footer-col footer-politic"><a class="footer-link" href="#">Политика конфиденциальности</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-layer">
+			<div class="modal-filter"></div>
+			<div class="modal-wrap">
+				<div class="modal" data-modal="order">
+					<div class="modal-content">
+						<div class="modal-close">
+							<svg class="icon">
+								<use xlink:href="#close"></use>
+							</svg>
+						</div>
+						<div class="modal-title">Оставьте заявку</div>
+						<div class="modal-text">Мы свяжемся с вами в ближайшее время и уточним все детали</div>
+						<form class="validate-form" action="javascript:void(null);">
+							<div class="input-row">
+								<input class="input" type="text" name="name" placeholder="Имя" />
+							</div>
+							<div class="input-row">
+								<input class="input" type="text" name="phone" placeholder="Телефон" />
+							</div>
+							<div class="agree-row">
+								<div class="agree-row__text">Нажимая кнопку "Отправить" вы даете согласие<a href="#">на обработку персональных данных</a></div>
+								<input class="modal-send" type="submit" value="Отправить" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!--success message-->
+				<div class="modal" data-modal="truemessage">
+					<div class="modal-content modal-content--true">
+						<svg class="icon">
+							<use xlink:href="#interface"></use>
+						</svg>
+						<div class="modal-text-true">Ваша заявка принята</div>
+					</div>
 				</div>
 			</div>
 		</div>

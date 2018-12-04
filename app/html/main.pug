@@ -2,6 +2,16 @@ include block_html/_style.pug
 include block_html/_include.pug
 
 
+
+.slide-menu
+	.slide-menu__list
+		+icon("close","icon icon-close")
+		a(href="#cards" rel='m_PageScroll2id').slide-menu__list-el Карточка
+		a(href="#sale" rel='m_PageScroll2id').slide-menu__list-el Допродажи
+		a(href="#order" rel='m_PageScroll2id').slide-menu__list-el Оформление заказа
+		a(href="#castom" rel='m_PageScroll2id').slide-menu__list-el Кастомизация
+		a(href="#page" rel='m_PageScroll2id').slide-menu__list-el Страницы
+		a(href="#adaptive" rel='m_PageScroll2id').slide-menu__list-el Адаптив
 .banner(style="background-image:url('img/banner-bg.png')")
 	.header
 		.main-cont
@@ -9,20 +19,21 @@ include block_html/_include.pug
 				a(href="/").header-logo
 					img(src="img/logo-light.svg", alt="")
 				.header-menu
-					a(href="#").header-menu__el Карточка
-					a(href="#").header-menu__el Допродажи
-					a(href="#").header-menu__el Оформление заказа
-					a(href="#").header-menu__el Кастомизация
-					a(href="#").header-menu__el Страницы
-					a(href="#").header-menu__el Адаптив
-
+					a(href="#cards" rel='m_PageScroll2id').header-menu__el Карточка
+					a(href="#sale" rel='m_PageScroll2id').header-menu__el Допродажи
+					a(href="#order" rel='m_PageScroll2id').header-menu__el Оформление заказа
+					a(href="#castom" rel='m_PageScroll2id').header-menu__el Кастомизация
+					a(href="#page" rel='m_PageScroll2id').header-menu__el Страницы
+					a(href="#adaptive" rel='m_PageScroll2id').header-menu__el Адаптив
+				.head-toggle
+					+icon("menu","icon icon-open")
 	.banner-content-wrap
 		.main-cont
 			.banner-content
 				.banner-slogan(data-aos="fade-in" data-aos-delay="250" data-aos-duration="1000")
 					.banner-slogan__title Запустите свой сайт доставки
 					.banner-slogan__text Шаблон доставки блюд, интегрированный с iikoчерез iikoDelivery widget
-					.banner-slogan__get Оставить заявку
+					div(data-modal="order").modal-get.banner-slogan__get Оставить заявку
 				.banner-slogan__img(data-aos="zoom-in" data-aos-delay="750" data-aos-duration="800")
 					img(src="img/main-banner-img.png", alt="")
 
@@ -47,7 +58,7 @@ include block_html/_include.pug
 				.advant-el__text Запуск в течении 7 дней, после подписания договора. Сайт полностью готов и настроен, можно продавать с первого дня
 
 //variable
-.section.section--gray.section-variable
+#cards.section.section--gray.section-variable
 	.main-cont
 		.variable
 			.variable-img(data-aos="fade-right" data-aos-delay="500" data-aos-duration="1200")
@@ -56,11 +67,11 @@ include block_html/_include.pug
 				.variable-title Вариации карточки товара
 				.variable-text Её характеристики могут изменяться в зависимости от продаваемого блюда: меняется информация и размер, высвечиваются теги. При необходимости можно добавить модификаторы
 				.variable-get-row
-					a(href="#").variable-get-el.variable-get-dark Оставить заявку
+					div(data-modal="order").modal-get.variable-get-el.variable-get-dark Оставить заявку
 					a(href="#").variable-get-el.variable-get-light Подробнее
 
 //convers
-.section.section-convers
+.section.section-convers#sale
 	.main-cont
 		#parallaxScene.scene.scene--bg(data-aos="fade-in" data-aos-delay="1500" data-aos-duration="1200")
 			.bg-icon.bg-icon-conv--fish(data-depth="0.2" )
@@ -82,19 +93,18 @@ include block_html/_include.pug
 			img(src="img/laptop.png", alt="")
 
 //custom
-.section.section-custom
+.section.section-custom#castom
 	.section-custom-wave(style="background-image:url('img/pattern.png')")
 	.main-cont
 		.custom-wrap
 			.custom-title(data-aos="fade-down" data-aos-delay="500" data-aos-duration="1200") Кастомизация
 			.custom-text(data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200") Пределу совершенства нет — шаблон поддерживает изменения дизайна. В качестве дополнительной услуги мы можем адаптировать сайт в соответствии с корпоративным стилем компании
-			.custom-get(data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800") Оставить заявку
+			div(data-modal="order" data-aos="zoom-in" data-aos-delay="1500" data-aos-duration="800").modal-get.custom-get Оставить заявку
 			.custom-img(data-aos="fade-up" data-aos-delay="1800" data-aos-duration="1200")
 				img(src="img/custom.png", alt="")
 
 //makeout
 .section.section--gray.section-makeout
-
 	.main-cont
 		#parallaxScene2.scene--bg(data-aos="fade-in" data-aos-delay="1200" data-aos-duration="1200")
 			.bg-icon.bg-icon-conv--fish(data-depth="0.2" )
@@ -115,7 +125,7 @@ include block_html/_include.pug
 			img(src="img/order.png", alt="")
 
 //work
-.section.section-work
+.section.section-work#page
 	.main-cont
 		.work
 			.work-content(data-aos="fade-right" data-aos-delay="500" data-aos-duration="1500")
@@ -131,7 +141,7 @@ include block_html/_include.pug
 							.work-slider__el(style="background-image:url('img/slider-el.jpg')")
 
 //adaptive
-.section.section-adaptive
+.section.section-adaptive#adaptive
 	.section-adaptive-wave(style="background-image:url('img/pattern.png')")
 	.main-cont
 		.adaptive
@@ -142,7 +152,7 @@ include block_html/_include.pug
 				.adaptive-text Сайт адаптирован под мобильные устройства и широкоэкранные форматы
 
 //order
-.section.section--gray.section-order
+.section.section--gray.section-order#order
 	.main-cont
 		.order-wrap
 			.order(data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1200")
@@ -167,5 +177,29 @@ include block_html/_include.pug
 				a(href="#").footer-link Информация по настройке шаблона
 			.footer-col.footer-politic
 				a(href="#").footer-link Политика конфиденциальности
+
+.modal-layer
+	.modal-filter
+	.modal-wrap
+		.modal(data-modal="order")
+			.modal-content
+				.modal-close
+					+icon("close","icon")
+				.modal-title Оставьте заявку
+				.modal-text Мы свяжемся с вами в ближайшее время и уточним все детали
+				form.validate-form( action="javascript:void(null);")
+					.input-row
+						input(type="text" name="name" placeholder="Имя").input
+					.input-row
+						input(type="text" name="phone" placeholder="Телефон").input
+					.agree-row
+						.agree-row__text Нажимая кнопку "Отправить" вы даете согласие
+							a(href="#") на обработку персональных данных
+						input(type="submit" value="Отправить").modal-send
+		//success message
+		.modal(data-modal="truemessage")
+			.modal-content.modal-content--true
+				+icon("interface","icon")
+				.modal-text-true Ваша заявка принята
 
 include ./block_html/_script.pug

@@ -1,4 +1,51 @@
+
+
+
 $(document).ready(function () {
+
+	//mobile menu
+	$('.head-toggle--open').click(function(){
+		$('body').css({
+			overflow: '',
+			position: '',
+			top: ''
+		})
+	});
+
+	$('.icon-open').click(function(event){
+		event.stopPropagation();
+		$('.slide-menu').addClass('slide-menu--open');
+		$('body').addClass('body-fix')
+	});
+	$('.icon-close').click(function(event){
+		event.stopPropagation();
+		$('.slide-menu').removeClass('slide-menu--open');
+		$('body').removeClass('body-fix')
+	});
+	$('.slide-menu').on("click", function (event) {
+		event.stopPropagation();
+	});
+
+	$(document).add('.slide-menu__list-el').on("click", function () {
+			$('.head-wrap').removeClass('head--up');
+			$('.head-toggle').removeClass('head-toggle--open');
+			$('.slide-menu').removeClass('slide-menu--open');
+			console.log(modalState.isModalShow);
+			if(modalState.isModalShow == false){
+				$('body').removeClass('body-fix')
+		}
+	});
+	//mobile menu===end
+
+	//scroll to
+$('a[href*="#"]').on('click', function (e) {
+	e.preventDefault();
+
+	$('html, body').animate({
+		scrollTop: $($(this).attr('href')).offset().top
+	}, 1500, 'linear');
+});
+	//scroll to === end
 
 	//animate show
 	AOS.init({
@@ -8,19 +55,19 @@ $(document).ready(function () {
 
 	//paralax scene
 
-        var scene = document.getElementById('parallaxScene');
-        var parallaxInstance = new Parallax(scene, {
-            relativeInput: true,
-            scalarX: 5
-        });
+	var scene = document.getElementById('parallaxScene');
+	var parallaxInstance = new Parallax(scene, {
+			relativeInput: true,
+			scalarX: 5
+	});
 
-        var scene2 = document.getElementById('parallaxScene2');
-        var parallaxInstance2 = new Parallax(scene2, {
-            relativeInput: true,
-            invertX: false,
-            invertY: false,
-            scalarX: 5
-        });
+	var scene2 = document.getElementById('parallaxScene2');
+	var parallaxInstance2 = new Parallax(scene2, {
+			relativeInput: true,
+			invertX: false,
+			invertY: false,
+			scalarX: 5
+	});
 
 	//paralax scene ===end
 
